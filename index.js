@@ -33,7 +33,7 @@ const fs = require('fs');
   })
 
   // Escrever os dados em um arquivo local
-  fs.writeFile(`${process.argv[3]}/instagram.json`, JSON.stringify(imgList, null, 2), err => {
+  fs.writeFile(`${process.argv[3] ? process.argv[3] : '.' }/instagram.json`, JSON.stringify(imgList, null, 2), err => {
     if(err) throw new Error('Ixxxi alguma coisa deu ruim hem na atualização do whatsapp!')
 
     console.log('Whatsapp images updated_at')
